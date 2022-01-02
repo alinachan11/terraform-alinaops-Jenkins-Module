@@ -17,10 +17,12 @@ OPTIONAL:
 1) nodes_count - default value 2
 2) keyname and keypath - default value ansible_key
 3) consul_join_profile_name - default value opsschool-consul-join
+4) eks_control_profile_name - default value eks-control
 
 # Output:
 The module generates the following outputs:
 1) jenkins_server_private_address
 2) jenkins_nodes_private_addresses
 3) jenkins_lb_dns
+4) jenkins_nodes_arn
 
