@@ -68,6 +68,12 @@ variable "consul_join_profile_name" {
   default = "opsschool-consul-join"
 }
 
+variable "eks_control_profile_name" {
+  description = "profile name for eks control"
+  type = string
+  default = "eks-control"
+}
+
 
 
 

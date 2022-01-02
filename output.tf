@@ -9,3 +9,7 @@ output "jenkins_nodes_private_addresses" {
 output "jenkins_lb_dns" {
     value = aws_lb.jenkins_master_alb.dns_name
 }
+
+output "jenkins_nodes_arn" {
+    value = aws_instance.jenkins_agent.*.arn
+}
