@@ -10,6 +10,7 @@ resource "aws_instance" "jenkins_agent" {
     subnet_id = var.subnets_id_private[count.index]
     tags = {
     Name = "Jenkins Agent-${count.index+1}"
+    task = "jenkins_node"
   }
     root_block_device {
     encrypted   = false
