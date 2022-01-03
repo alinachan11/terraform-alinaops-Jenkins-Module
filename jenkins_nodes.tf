@@ -27,6 +27,22 @@ resource "aws_instance" "jenkins_agent" {
       bastion_private_key = file(var.keypath)        
     }   
   }
+  provisioner "file" {
+    content     = var.kubeconfig
+    #module.EKS_Module.config_map_aws_auth["value"]
+    
+    destination = "/home/ec2-user/kubeconfig_opsSchool-eks"
+     connection {   
+       type        = "ssh" 
+      host        = self.private_ip
+      user        = "ec2-user"
+      private_key = file(var.keypath)     
+
+      bastion_host = var.bh_public_ip
+      bastion_user = "ubuntu"
+      bastion_private_key = file(var.keypath)  
+    }  
+  }
     root_block_device {
     encrypted   = false
     volume_type = var.volumes_type
