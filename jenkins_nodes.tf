@@ -12,6 +12,21 @@ resource "aws_instance" "jenkins_agent" {
     Name = "Jenkins Agent-${count.index+1}"
     task = "jenkins_node"
   }
+  provisioner "file" {
+    source      = "${var.keypath}"
+    destination = "/home/ubuntu/${var.keypath}"
+    connection {   
+      type        = "ssh" 
+      host        = self.private_ip
+      user        = "ubuntu"
+      private_key = file(var.keypath) 
+
+      
+      bastion_host = var.bh_public_ip
+      bastion_user = "ubuntu"
+      bastion_private_key = file(var.keypath)        
+    }   
+  }
     root_block_device {
     encrypted   = false
     volume_type = var.volumes_type
