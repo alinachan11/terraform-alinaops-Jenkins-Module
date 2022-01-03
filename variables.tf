@@ -74,6 +74,11 @@ variable "eks_control_profile_name" {
   default = "eks-control"
 }
 
+variable "kubeconfig" {
+  description = "kubeconfig data"
+
+}
+
 
 
 

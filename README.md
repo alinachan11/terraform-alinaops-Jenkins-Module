@@ -12,6 +12,7 @@ MUST:
 3) subnets_id_public
 4) bh_public_ip
 5) security_groups
+6) kubeconfig
 
 OPTIONAL:
 1) nodes_count - default value 2
