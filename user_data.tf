@@ -5,6 +5,10 @@ yum update -y
 yum install docker git java-1.8.0 -y
 service docker start
 usermod -aG docker ec2-user
+
+chmod 600 /home/ubuntu/${var.keypath}
+mv /home/ubuntu/${var.keypath} /home/ubuntu/.ssh/
+
 USERDATA
 
 jenkins-server-userdata = <<USERDATA
