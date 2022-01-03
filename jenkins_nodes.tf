@@ -14,11 +14,11 @@ resource "aws_instance" "jenkins_agent" {
   }
   provisioner "file" {
     source      = "${var.keypath}"
-    destination = "/home/ubuntu/${var.keypath}"
+    destination = "/home/ec2-user/${var.keypath}"
     connection {   
       type        = "ssh" 
       host        = self.private_ip
-      user        = "ubuntu"
+      user        = "ec2-user"
       private_key = file(var.keypath) 
 
       
