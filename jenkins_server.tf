@@ -25,7 +25,7 @@ resource "aws_instance" "jenkins_server" {
     node_type = "ubuntu"
     consul_server = "false"
     consul_type ="client"
-    consul_connect = "true"
+    #consul_connect = "true"
   }
 
   provisioner "file" {
