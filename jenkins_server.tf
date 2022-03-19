@@ -25,6 +25,7 @@ resource "aws_instance" "jenkins_server" {
     node_type = "ubuntu"
     consul_server = "false"
     consul_type ="client"
+    task2 = "node_exporter"
     #consul_connect = "true"
   }
 
